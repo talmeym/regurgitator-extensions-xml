@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:rgc="http://common.regurgitator.emarte.com"
+           xmlns:rge="http://extensions.regurgitator.emarte.com"
+           targetNamespace="http://extensions.regurgitator.emarte.com" elementFormDefault="qualified">
+
+    <xs:import schemaLocation="regurgitatorCommon.xsd" namespace="http://common.regurgitator.emarte.com"/>
+
+    <xs:complexType name="xml-parameter">
+        <xs:sequence>
+            <xs:element name="xpath" type="rgc:populated-string" minOccurs="0"/>
+            <xs:element name="namespaces" type="rge:namespaces" minOccurs="0"/>
+            <xs:element name="processor" type="rgc:contains-one-child" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="rgc:prototyped"/>
+        <xs:attribute name="source" type="rgc:populated-string" use="required"/>
+		<xs:attribute name="xpath" type="rgc:populated-string"/>
+		<xs:attribute name="namespaces" type="rgc:populated-string"/>
+		<xs:attribute name="processor" type="rgc:populated-string"/>
+	</xs:complexType>
+
+    <xs:complexType name="xpath-processor">
+        <xs:sequence>
+            <xs:element name="xpath" type="rgc:populated-string" minOccurs="0"/>
+            <xs:element name="namespaces" type="rge:namespaces" minOccurs="0"/>
+        </xs:sequence>
+		<xs:attribute name="xpath" type="rgc:populated-string"/>
+		<xs:attribute name="namespaces" type="rgc:populated-string"/>
+	</xs:complexType>
+
+	<xs:complexType name="json-path-processor">
+		<xs:simpleContent>
+			<xs:extension base="rgc:populated-string">
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+    <xs:complexType name="json-parameter">
+        <xs:sequence>
+            <xs:element name="json-path" type="rgc:populated-string" minOccurs="0"/>
+            <xs:element name="processor" type="rgc:contains-one-child" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="rgc:prototyped"/>
+		<xs:attribute name="json-path" type="rgc:populated-string"/>
+		<xs:attribute name="source" type="rgc:populated-string" use="required"/>
+		<xs:attribute name="processor" type="rgc:populated-string"/>
+    </xs:complexType>
+
+    <xs:complexType name="namespace">
+        <xs:attribute name="prefix" type="rgc:populated-string" use="required"/>
+        <xs:attribute name="uri" type="rgc:populated-string" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="namespaces">
+        <xs:sequence>
+            <xs:element name="namespace" type="rge:namespace" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="freemarker-builder">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="file" type="rgc:populated-string"/>
+				<xs:attribute name="source" type="rgc:populated-string"/>
+			</xs:extension>
+		</xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="freemarker-processor">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="file" type="rgc:populated-string"/>
+			</xs:extension>
+		</xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="velocity-builder">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="file" type="rgc:populated-string"/>
+				<xs:attribute name="source" type="rgc:populated-string"/>
+			</xs:extension>
+		</xs:simpleContent>
+    </xs:complexType>
+
+	<xs:complexType name="velocity-processor">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="file" type="rgc:populated-string"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+    <xs:complexType name="xml-schema-validator">
+        <xs:sequence>
+            <xs:element name="file" type="rgc:populated-string" minOccurs="0"/>
+        </xs:sequence>
+		<xs:attribute name="file" type="rgc:populated-string"/>
+    </xs:complexType>
+
+    <xs:complexType name="contains-json-path">
+		<xs:simpleContent>
+			<xs:extension base="rgc:populated-string"/>
+		</xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="contains-xpath">
+		<xs:simpleContent>
+			<xs:extension base="rgc:populated-string">
+				<xs:attribute name="namespaces" type="rgc:populated-string"/>
+			</xs:extension>
+		</xs:simpleContent>
+    </xs:complexType>
+
+    <xs:element name="freemarker-builder" type="rge:freemarker-builder"/>
+    <xs:element name="freemarker-processor" type="rge:freemarker-processor"/>
+    <xs:element name="velocity-builder" type="rge:velocity-builder"/>
+    <xs:element name="velocity-processor" type="rge:velocity-processor"/>
+    <xs:element name="xml-schema-validator" type="rge:xml-schema-validator"/>
+	<xs:element name="json-parameter" type="rge:json-parameter"/>
+	<xs:element name="xml-parameter" type="rge:xml-parameter"/>
+	<xs:element name="json-path-processor" type="rge:json-path-processor"/>
+	<xs:element name="xpath-processor" type="rge:xpath-processor"/>
+	<xs:element name="contains-json-path" type="rge:contains-json-path"/>
+	<xs:element name="contains-xpath" type="rge:contains-xpath"/>
+</xs:schema>
