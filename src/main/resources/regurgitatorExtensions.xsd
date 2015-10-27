@@ -8,7 +8,6 @@
 
     <xs:complexType name="xml-parameter">
         <xs:sequence>
-            <xs:element name="xpath" type="rgc:populated-string" minOccurs="0"/>
             <xs:element name="namespaces" type="rge:namespaces" minOccurs="0"/>
             <xs:element name="processor" type="rgc:contains-one-child" minOccurs="0"/>
         </xs:sequence>
@@ -21,7 +20,6 @@
 
     <xs:complexType name="xpath-processor">
         <xs:sequence>
-            <xs:element name="xpath" type="rgc:populated-string" minOccurs="0"/>
             <xs:element name="namespaces" type="rge:namespaces" minOccurs="0"/>
         </xs:sequence>
 		<xs:attribute name="xpath" type="rgc:populated-string"/>
@@ -37,7 +35,6 @@
 
     <xs:complexType name="json-parameter">
         <xs:sequence>
-            <xs:element name="json-path" type="rgc:populated-string" minOccurs="0"/>
             <xs:element name="processor" type="rgc:contains-one-child" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="rgc:prototyped"/>
@@ -92,9 +89,6 @@
 	</xs:complexType>
 
     <xs:complexType name="xml-schema-validator">
-        <xs:sequence>
-            <xs:element name="file" type="rgc:populated-string" minOccurs="0"/>
-        </xs:sequence>
 		<xs:attribute name="file" type="rgc:populated-string"/>
     </xs:complexType>
 

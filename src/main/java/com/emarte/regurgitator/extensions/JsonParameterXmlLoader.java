@@ -14,8 +14,9 @@ public class JsonParameterXmlLoader implements XmlLoader<Step> {
     @Override
     public Step load(Element element, Set<Object> allIds) throws RegurgitatorException {
         String id = loadId(element, allIds);
-		String jsonPath = loadStringFromElementOrAttribute(element, JSONPATH);
+		String jsonPath = element.attributeValue(JSONPATH);
 		ValueProcessor processor = loadOptionalValueProcessor(element, allIds);
+
 		log.debug("Loaded json parameter '" + id + '\'');
         return new JsonParameter(id, loadPrototype(element), loadContext(element), loadContextLocation(element), new JsonPathProcessor(jsonPath), processor);
     }
