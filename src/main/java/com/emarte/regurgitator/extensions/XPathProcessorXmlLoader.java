@@ -5,7 +5,7 @@ import org.dom4j.Element;
 
 import java.util.*;
 
-import static com.emarte.regurgitator.core.XmlConfigUtil.loadValueFromElementOrAttribute;
+import static com.emarte.regurgitator.core.XmlConfigUtil.loadStringFromElementOrAttribute;
 import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.*;
 import static com.emarte.regurgitator.extensions.XmlNamespaceLoader.loadNamespaces;
 
@@ -17,6 +17,6 @@ public class XPathProcessorXmlLoader implements XmlLoader<ValueProcessor> {
 		String namespaceAttribute = element.attributeValue(NAMESPACES);
 		Map<String,String> namespaces = loadNamespaces(namespaceElement, namespaceAttribute);
 		log.debug("Loaded xpath processor");
-		return new XPathProcessor(loadValueFromElementOrAttribute(element, XPATH), namespaces);
+		return new XPathProcessor(loadStringFromElementOrAttribute(element, XPATH), namespaces);
 	}
 }
