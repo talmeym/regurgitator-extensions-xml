@@ -9,7 +9,8 @@ import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.*;
 import static com.emarte.regurgitator.extensions.XmlNamespaceLoader.loadNamespaces;
 
 public class XPathProcessorXmlLoader implements XmlLoader<ValueProcessor> {
-	private static Log log = Log.getLog(XPathProcessorXmlLoader.class);
+	private static final Log log = Log.getLog(XPathProcessorXmlLoader.class);
+
 	@Override
 	public XPathProcessor load(Element element, Set<Object> allIds) throws RegurgitatorException {
 		Map<String,String> namespaces = loadNamespaces(element.element(NAMESPACES), element.attributeValue(NAMESPACES));

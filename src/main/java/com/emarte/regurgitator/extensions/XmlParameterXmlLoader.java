@@ -9,8 +9,7 @@ import static com.emarte.regurgitator.core.XmlConfigUtil.*;
 import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.NAMESPACES;
 
 public class XmlParameterXmlLoader implements XmlLoader<Step> {
-    private static Log log = Log.getLog(XmlParameter.class);
-
+    private static final Log log = Log.getLog(XmlParameter.class);
 	private static final XPathProcessorXmlLoader XPATH_LOADER = new XPathProcessorXmlLoader();
 
     @Override

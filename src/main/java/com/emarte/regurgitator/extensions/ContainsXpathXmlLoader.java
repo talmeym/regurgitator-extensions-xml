@@ -9,7 +9,7 @@ import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.NAMES
 import static com.emarte.regurgitator.extensions.XmlNamespaceLoader.loadNamespaces;
 
 public class ContainsXpathXmlLoader implements XmlLoader<ConditionBehaviour> {
-	private static Log log = Log.getLog(ContainsXpathXmlLoader.class);
+	private static final Log log = Log.getLog(ContainsXpathXmlLoader.class);
 
 	@Override
 	public ConditionBehaviour load(Element element, Set<Object> allIds) throws RegurgitatorException {
