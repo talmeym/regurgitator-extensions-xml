@@ -13,9 +13,14 @@ public class VelocityBuilderXmlLoader extends VelocityBuilderLoader implements X
 	@Override
 	public ValueBuilder load(Element element, Set<Object> allIds) throws RegurgitatorException {
 		String source = element.attributeValue(SOURCE);
-		String text = element.getText();
-		String value = text != null && text.length() > 0 ? text : null;
+		String valueAttr = element.attributeValue(VALUE);
+		String valueText = element.getText();
+		String value = valid(valueAttr) ? valueAttr : valid(valueText) ? valueText : null;
 		String file = element.attributeValue(FILE);
 		return buildVelocityValueBuilder(source, value, file, log);
+	}
+
+	private boolean valid(String text) {
+		return text != null && text.length() > 0;
 	}
 }
