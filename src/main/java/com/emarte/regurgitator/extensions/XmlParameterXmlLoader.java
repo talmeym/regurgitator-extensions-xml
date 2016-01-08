@@ -10,15 +10,15 @@ import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.NAMES
 
 public class XmlParameterXmlLoader implements XmlLoader<Step> {
     private static final Log log = Log.getLog(XmlParameter.class);
-	private static final XPathProcessorXmlLoader XPATH_LOADER = new XPathProcessorXmlLoader();
+	private static final XpathProcessorXmlLoader XPATH_LOADER = new XpathProcessorXmlLoader();
 
     @Override
     public Step load(Element element, Set<Object> allIds) throws RegurgitatorException {
-		XPathProcessor xPathProcessor = XPATH_LOADER.load(element, allIds);
+		XpathProcessor xpathProcessor = XPATH_LOADER.load(element, allIds);
 		ValueProcessor processor = loadOptionalValueProcessor(element, element.element(NAMESPACES) != null ? 1 : 0, allIds);
 
 		String id = loadId(element, allIds);
 		log.debug("Loaded xml parameter '" + id + '\'');
-		return new XmlParameter(id, loadPrototype(element), loadContext(element), loadContextLocation(element), xPathProcessor, processor);
+		return new XmlParameter(id, loadPrototype(element), loadContext(element), loadContextLocation(element), xpathProcessor, processor);
 	}
 }
