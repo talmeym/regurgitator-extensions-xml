@@ -6,6 +6,8 @@ import org.dom4j.Element;
 import java.util.Set;
 
 import static com.emarte.regurgitator.core.CoreConfigConstants.*;
+import static com.emarte.regurgitator.core.XmlConfigUtil.loadOptionalBoolean;
+import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.ALL_CONTEXTS;
 
 public class FreemarkerBuilderXmlLoader extends FreemarkerBuilderLoader implements XmlLoader<ValueBuilder> {
 	private static final Log log = Log.getLog(FreemarkerBuilderXmlLoader.class);
@@ -17,7 +19,7 @@ public class FreemarkerBuilderXmlLoader extends FreemarkerBuilderLoader implemen
 		String valueText = element.getText();
 		String value = valid(valueAttr) ? valueAttr : valid(valueText) ? valueText : null;
 		String file = element.attributeValue(FILE);
-		return buildFreemarkerValueBuilder(source, value, file, log);
+		return buildFreemarkerValueBuilder(source, value, file, loadOptionalBoolean(element, ALL_CONTEXTS), log);
     }
 
 	private boolean valid(String text) {

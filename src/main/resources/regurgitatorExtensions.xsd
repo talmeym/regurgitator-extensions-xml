@@ -60,6 +60,7 @@
 				<xs:attribute name="file" type="rgc:populated-string"/>
 				<xs:attribute name="value" type="rgc:populated-string"/>
 				<xs:attribute name="source" type="rgc:populated-string"/>
+				<xs:attribute name="all-contexts" type="xs:boolean"/>
 			</xs:extension>
 		</xs:simpleContent>
     </xs:complexType>
@@ -78,6 +79,7 @@
 				<xs:attribute name="file" type="rgc:populated-string"/>
 				<xs:attribute name="value" type="rgc:populated-string"/>
 				<xs:attribute name="source" type="rgc:populated-string"/>
+				<xs:attribute name="all-contexts" type="xs:boolean"/>
 			</xs:extension>
 		</xs:simpleContent>
     </xs:complexType>
