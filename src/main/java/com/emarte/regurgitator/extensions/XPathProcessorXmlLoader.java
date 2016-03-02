@@ -8,7 +8,7 @@ import java.util.*;
 import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.*;
 import static com.emarte.regurgitator.extensions.XmlNamespaceLoader.loadNamespaces;
 
-public class XpathProcessorXmlLoader implements XmlLoader<ValueProcessor> {
+public class XpathProcessorXmlLoader implements XmlLoader<XpathProcessor> {
 	private static final Log log = Log.getLog(XpathProcessorXmlLoader.class);
 
 	@Override

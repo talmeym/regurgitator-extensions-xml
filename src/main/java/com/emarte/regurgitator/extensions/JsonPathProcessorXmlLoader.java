@@ -5,7 +5,7 @@ import org.dom4j.Element;
 
 import java.util.Set;
 
-public class JsonPathProcessorXmlLoader implements XmlLoader<ValueProcessor> {
+public class JsonPathProcessorXmlLoader implements XmlLoader<JsonPathProcessor> {
 	private static final Log log = Log.getLog(JsonPathProcessor.class);
 
 	@Override

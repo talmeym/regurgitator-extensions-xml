@@ -7,11 +7,11 @@ import java.util.Set;
 
 import static com.emarte.regurgitator.core.CoreConfigConstants.FILE;
 
-public class XmlSchemaValidatorXmlLoader implements XmlLoader<ValueProcessor> {
+public class XmlSchemaValidatorXmlLoader implements XmlLoader<XmlSchemaValidator> {
 	private static final Log log = Log.getLog(XmlSchemaValidatorXmlLoader.class);
 
     @Override
-    public ValueProcessor load(Element element, Set<Object> allIds) throws RegurgitatorException {
+    public XmlSchemaValidator load(Element element, Set<Object> allIds) throws RegurgitatorException {
 		String schemaPath = element.attributeValue(FILE);
 
 		log.debug("Loaded xml schema validator");
