@@ -12,7 +12,9 @@
 			<xs:any maxOccurs="1" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="rgc:prototyped"/>
-        <xs:attribute name="source" type="rgc:populated-string" use="required"/>
+		<xs:attribute name="source" type="rgc:populated-string"/>
+		<xs:attribute name="value" type="rgc:populated-string"/>
+		<xs:attribute name="file" type="rgc:populated-string"/>
 		<xs:attribute name="xpath" type="rgc:populated-string"/>
 		<xs:attribute name="namespaces" type="rgc:populated-string"/>
 		<xs:attribute name="processor" type="rgc:populated-string"/>
@@ -38,8 +40,10 @@
 			<xs:any maxOccurs="1" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="rgc:prototyped"/>
-		<xs:attribute name="json-path" type="rgc:populated-string"/>
-		<xs:attribute name="source" type="rgc:populated-string" use="required"/>
+		<xs:attribute name="source" type="rgc:populated-string"/>
+		<xs:attribute name="value" type="rgc:populated-string"/>
+		<xs:attribute name="file" type="rgc:populated-string"/>
+		<xs:attribute name="json-path" type="rgc:populated-string" use="required"/>
 		<xs:attribute name="processor" type="rgc:populated-string"/>
     </xs:complexType>
 
