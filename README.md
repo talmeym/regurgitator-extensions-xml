@@ -13,3 +13,11 @@ a json-parameter creates a parameter, extracting it's value from within a json d
 ```xml
 	<rge:json-parameter name="book-name" source="book-catalogue" json-path="$.catalogue.book.name"/>
 ```
+
+### xml-parameter
+
+an xml-parameter creates a parameter, extracting it's value from within an xml document, using xpath:
+
+```xml
+	<rge:xml-parameter name="book-name" source="book-catalogue" xpath="/bk:catalogue/bk:book/bk:name" namespaces="bk=http://books.com"/>
+```
