@@ -11,7 +11,7 @@ start your reading here: [regurgitator-all](http://github.com/talmeym/regurgitat
 a json-parameter creates a parameter, extracting it's value from within a json document, using json-path:
 
 ```xml
-	<rge:json-parameter name="book-name" source="book-catalogue" json-path="$.catalogue.book.name"/>
+<rge:json-parameter name="book-name" source="book-catalogue" json-path="$.catalogue.book.name"/>
 ```
 
 ### xml-parameter
@@ -19,5 +19,9 @@ a json-parameter creates a parameter, extracting it's value from within a json d
 an xml-parameter creates a parameter, extracting it's value from within an xml document, using xpath:
 
 ```xml
-	<rge:xml-parameter name="book-name" source="book-catalogue" xpath="/bk:catalogue/bk:book/bk:name" namespaces="bk=http://books.com"/>
+<rge:xml-parameter name="book-name" source="book-catalogue" xpath="/bk:catalogue/bk:book/bk:name">
+	<rge:namespaces>
+		<rge:namespace prefix="bk" uri="http://books.com"/>
+	</rge:namespaces>
+</rge:xml-parameter>
 ```
