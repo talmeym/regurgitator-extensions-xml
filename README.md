@@ -82,6 +82,14 @@ a velocity-builder builds from just the ``parameters`` context by default. if th
 
 ### json-path-processor
 
+a json-path-processor processes a parameter value, extracting a value from it using json path.
+
+```xml
+<rg:create-parameter name="book-name" source="book-catalogue">
+	<rge:json-path-processor>$.catalogue.book.name</rge:json-path-processor>
+</rg:create-parameter>
+```
+
 ### xpath-processor
 
 ### freemarker-processor
