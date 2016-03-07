@@ -32,7 +32,7 @@ an xml-parameter creates a parameter, extracting it's value from within an xml d
 
 ### freemarker-builder 
 
-a freemarker-builder build a parameter value, agregating values together using a freemarker template.
+a freemarker-builder agregating parameter values together using a freemarker template.
 
 ```xml
 <rge:freemarker-builder source="template-param"/>
@@ -42,9 +42,9 @@ a freemarker-builder build a parameter value, agregating values together using a
 <rge:freemarker-builder value="This is a ${descriptive} day!"/>
 ```
 
-a freemarker-builder step can use the same value source attributes as other steps, getting it's template text from a source parameter, a file or a value, specified as an attribute or as the element text (but not both).
+a freemarker-builder can use the same value source attributes as other steps, such as ``create-parameter``, getting it's template text from a source parameter, a file or an explicit value, specified as an attribute or element text (but not both).
 
-a freemarker-builder builds from just the ``parameters`` content by default. if the ``all-contexts`` attribute is used, all contexts are available to the builder, with dashes replaced with underscores in context names, and colons separating context and parameter names replaced with a period, eg. ``request-metadata:method`` becomes ``request_metadata.method`` when referenced in the template.
+a freemarker-builder builds from just the ``parameters`` context by default. if the ``all-contexts`` attribute is true, all context data is made available to the builder, with dashes replaced by underscores in context names, and the colon separating context and parameter names replaced with a period, eg. ``request-metadata:method`` becomes ``request_metadata.method`` when referenced in the template.
 
 ```xml
 <rge:freemarker-builder all-contexts="true">
