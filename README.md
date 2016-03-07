@@ -42,7 +42,7 @@ a freemarker-builder build a parameter value, agregating values together using a
 <rge:freemarker-builder value="This is a ${descriptive} day!"/>
 ```
 
-a freemarker-builder step can use the same value source attributes as in other steps, getting it's template from a source parameter, a file or a value, specified as an attribute or as the element text (but not both).
+a freemarker-builder step can use the same value source attributes as other steps, getting it's template text from a source parameter, a file or a value, specified as an attribute or as the element text (but not both).
 
 a freemarker-builder builds from just the ``parameters`` content by default. if the ``all-contexts`` attribute is used, all contexts are available to the builder, with dashes replaced with underscores in context names, and colons separating context and parameter names replaced with a period, eg. ``request-metadata:method`` becomes ``request_metadata.method`` when referenced in the template.
 
