@@ -32,6 +32,22 @@ an xml-parameter creates a parameter, extracting it's value from within an xml d
 
 ### freemarker-builder 
 
+a freemarker-builder build a parameter value, agregating values together using a freemarker template.
+
+```xml
+<rge:freemarker-builder file="classpath:/template.ftl"/>
+
+<rge:freemarker-builder value="This is a ${descriptive} day!"/>
+
+<rge:freemarker-builder all-contexts="true">
+	{
+		"response": "${response_payload.text}",
+		"status-code": "${response-metadata.status_code}",
+		"content-type": "${response-metadata.content_type}"
+	}
+</rge:freemarker-builder>
+```
+
 ### velocity-builder
 
 ### json-path-processor
