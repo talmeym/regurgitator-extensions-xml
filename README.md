@@ -92,6 +92,12 @@ a json-path-processor processes a parameter value, extracting a value from it us
 
 ### xpath-processor
 
+```xml
+<rg:create-parameter name="book-name" source="book-catalogue">
+	<rge:xpath-processor namespaces="bk=http://books.com" xpath="/bk:catalogue/bk:book/@name"/>
+</rg:create-parameter>
+```
+
 ### freemarker-processor
 
 ### velocity-processor
