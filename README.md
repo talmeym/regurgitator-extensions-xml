@@ -98,6 +98,18 @@ a json-path-processor processes a parameter value, extracting a value from it us
 </rg:create-parameter>
 ```
 
+namespaces for an xpath-processor can also be declared as a child element of the processor:
+
+```xml
+<rg:create-parameter name="book-name" source="book-catalogue">
+	<rge:xpath-processor xpath="/bk:catalogue/bk:book/@name">
+		<rge:namespaces>
+			<rge:namespace prefix="bk" uri="http://books.com"/>
+		</rge:namespaces>
+	</rge:xpath-processor>
+</rg:create-parameter>
+```
+
 ### freemarker-processor
 
 ### velocity-processor
