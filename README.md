@@ -10,7 +10,7 @@ read more about regurgitator in xml here: [regurgitator-core-xml](http://github.
 
 ### json-parameter
 
-a json-parameter creates a parameter, extracting it's value from within a json document, using json-path:
+a json-parameter creates a parameter, extracting its value from within a json document, using json-path:
 
 ```xml
 <rge:json-parameter name="book-name" source="book-catalogue" json-path="$.catalogue.book.name"/>
@@ -18,7 +18,7 @@ a json-parameter creates a parameter, extracting it's value from within a json d
 
 ### xml-parameter
 
-an xml-parameter creates a parameter, extracting it's value from within an xml document, using xpath:
+an xml-parameter creates a parameter, extracting its value from within an xml document, using xpath:
 
 ```xml
 <rge:xml-parameter name="book-name" source="book-catalogue" xpath="/bk:catalogue/bk:book/bk:name">
@@ -42,7 +42,7 @@ a freemarker-builder agregating parameter values together using a freemarker tem
 <rge:freemarker-builder value="This is a ${descriptive} day!"/>
 ```
 
-a freemarker-builder can use the same value source attributes as other steps, such as ``create-parameter``, getting it's template text from a source parameter, a file or an explicit value, specified as an attribute or element text (but not both).
+a freemarker-builder can use the same value source attributes as other steps, such as ``create-parameter``, getting its template text from a source parameter, a file or an explicit value, specified as an attribute or element text (but not both).
 
 a freemarker-builder builds from just the ``parameters`` context by default. if the ``all-contexts`` attribute is true, all context data is made available to the builder, with dashes replaced by underscores in context names, and the colon separating context and parameter names replaced with a period, eg. ``request-metadata:method`` becomes ``request_metadata.method`` when referenced in the template.
 
