@@ -50,7 +50,7 @@ a freemarker-builder builds from just the ``parameters`` context by default. if 
 <rge:freemarker-builder all-contexts="true">
 	{
 		"response": "${response_payload.text}",
-		"status-code": "${response-metadata.status_code}",
+		"status-code": ${response-metadata.status_code},
 		"content-type": "${response-metadata.content_type}"
 	}
 </rge:freemarker-builder>
