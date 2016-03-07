@@ -92,6 +92,8 @@ a json-path-processor processes a parameter value, extracting a value from it us
 
 ### xpath-processor
 
+an xpath-processor processes a parameter value, extracting a value from it using xpath.
+
 ```xml
 <rg:create-parameter name="book-name" source="book-catalogue">
 	<rge:xpath-processor namespaces="cat=http://catalogues.com,bk=http://books.com" xpath="/cat:catalogue/bk:book/@name"/>
