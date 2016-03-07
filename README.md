@@ -58,6 +58,28 @@ a freemarker-builder builds from just the ``parameters`` context by default. if 
 
 ### velocity-builder
 
+```xml
+<rge:velocity-builder source="template-param"/>
+
+<rge:velocity-builder file="classpath:/template.ftl"/>
+
+<rge:velocity-builder value="This is a ${descriptive} day!"/>
+```
+
+a velocity-builder can use the same value source attributes as other steps, such as ``create-parameter``, getting its template text from a source parameter, a file or an explicit value, specified as an attribute or element text (but not both).
+
+a velocity-builder builds from just the ``parameters`` context by default. if the ``all-contexts`` attribute is true, all context data is made available to the builder, with dashes replaced by underscores in context names, and the colon separating context and parameter names replaced with a period, eg. ``request-metadata:method`` becomes ``request_metadata.method`` when referenced in the template.
+
+```xml
+<rge:velocity-builder all-contexts="true">
+	{
+		"response": "${response_payload.text}",
+		"status-code": ${response-metadata.status_code},
+		"content-type": "${response-metadata.content_type}"
+	}
+</rge:velocity-builder>
+```
+
 ### json-path-processor
 
 ### xpath-processor
