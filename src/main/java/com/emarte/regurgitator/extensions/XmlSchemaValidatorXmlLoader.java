@@ -12,9 +12,7 @@ public class XmlSchemaValidatorXmlLoader implements XmlLoader<XmlSchemaValidator
 
     @Override
     public XmlSchemaValidator load(Element element, Set<Object> allIds) throws RegurgitatorException {
-		String schemaPath = element.attributeValue(FILE);
-
 		log.debug("Loaded xml schema validator");
-		return new XmlSchemaValidator(schemaPath);
+		return new XmlSchemaValidator(element.attributeValue(FILE));
     }
 }
