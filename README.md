@@ -115,6 +115,20 @@ namespaces for an xpath-processor can also be declared as a child element of the
 
 ### freemarker-processor
 
+a freemarker-processor processes a parameter value, formatting the value using a freemarker template.
+
+```xml
+<rg:create-response source="unformatted-response">
+	<rge:freemarker-processor file="classpath://template.ftl"/>
+</rg:create-response>
+
+<rg:create-response source="unformatted-response">
+	<rge:freemarker-processor>The response was: ${value}</rge:freemarker-processor>
+</rg:create-response>
+```
+
+the parameter value is available to the template as ``value``. the template can be specified as the element text or drawn in from a file.
+
 ### velocity-processor
 
 ### xml-schema-validator
