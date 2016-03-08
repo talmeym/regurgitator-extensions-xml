@@ -17,6 +17,11 @@ public class VelocityBuilderXmlLoader extends VelocityBuilderLoader implements X
 		String source = element.attributeValue(SOURCE);
 		String valueAttr = element.attributeValue(VALUE);
 		String valueText = element.getText();
+
+		if(valid(valueAttr) && valid(valueText)) {
+			throw new RegurgitatorException("Value cannot be defined in text and attribute");
+		}
+
 		String value = valid(valueAttr) ? valueAttr : valid(valueText) ? valueText : null;
 		String file = element.attributeValue(FILE);
 		return buildVelocityValueBuilder(source, value, file, loadOptionalBoolean(element, ALL_CONTEXTS), log);
