@@ -146,3 +146,13 @@ a velocity-processor processes a parameter value, formatting the value using a v
 the parameter value is made available to the template as simply ``value``. the template text can be specified in the element text or drawn in from a file.
 
 ### xml-schema-validator
+
+an xml-schema-validator is a ``value-processor`` that validates a parameter value against an xml-schema file.
+
+```xml
+<rg:create-response source="response">
+	<rge:xml-schema-validator file="classpath://response_schema.xsd"/>
+</rg:create-response>
+```
+
+validating a parameter value can be useful in ensuring that your configured logic and processing always returns valid responses. if the value fails validation, an exception is thrown; if it passes, the value is passed through unchanged.
