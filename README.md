@@ -127,7 +127,7 @@ a freemarker-processor processes a parameter value, formatting the value using a
 </rg:create-response>
 ```
 
-the parameter value is available to the template as ``value``. the template can be specified as the element text or drawn in from a file.
+the parameter value is made available to the template as simply ``value``. the template text can be specified in the element text or drawn in from a file.
 
 ### velocity-processor
 
