@@ -32,7 +32,7 @@ an xml-parameter creates a parameter, extracting its value from within an xml do
 
 ### freemarker-builder 
 
-a freemarker-builder agregating parameter values together using a freemarker template.
+a freemarker-builder aggregating parameter values together using a freemarker template.
 
 ```xml
 <rge:freemarker-builder source="template-param"/>
