@@ -131,4 +131,18 @@ the parameter value is made available to the template as simply ``value``. the t
 
 ### velocity-processor
 
+a velocity-processor processes a parameter value, formatting the value using a velocity template.
+
+```xml
+<rg:create-response source="unformatted-response">
+	<rge:velocity-processor file="classpath://template.ftl"/>
+</rg:create-response>
+
+<rg:create-response source="unformatted-response">
+	<rge:velocity-processor>The response was: ${value}</rge:velocity-processor>
+</rg:create-response>
+```
+
+the parameter value is made available to the template as simply ``value``. the template text can be specified in the element text or drawn in from a file.
+
 ### xml-schema-validator
