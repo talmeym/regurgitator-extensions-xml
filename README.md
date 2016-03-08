@@ -32,7 +32,7 @@ an xml-parameter creates a parameter, extracting its value from within an xml do
 
 ### freemarker-builder 
 
-a freemarker-builder agregating parameter values together using a freemarker template.
+a freemarker-builder aggregates parameter values together using a freemarker template.
 
 ```xml
 <rge:freemarker-builder source="template-param"/>
@@ -57,6 +57,8 @@ a freemarker-builder builds from just the ``parameters`` context by default. if 
 ```
 
 ### velocity-builder
+
+a velocity-builder aggregates parameter values together using a freemarker template.
 
 ```xml
 <rge:velocity-builder source="template-param"/>
@@ -115,6 +117,44 @@ namespaces for an xpath-processor can also be declared as a child element of the
 
 ### freemarker-processor
 
+a freemarker-processor processes a parameter value, formatting the value using a freemarker template.
+
+```xml
+<rg:create-response source="unformatted-response">
+	<rge:freemarker-processor file="classpath:/template.ftl"/>
+</rg:create-response>
+
+<rg:create-response source="unformatted-response">
+	<rge:freemarker-processor>The response was: ${value}</rge:freemarker-processor>
+</rg:create-response>
+```
+
+the parameter value is made available to the template as simply ``value``. the template text can be specified in the element text or drawn in from a file.
+
 ### velocity-processor
 
+a velocity-processor processes a parameter value, formatting the value using a velocity template.
+
+```xml
+<rg:create-response source="unformatted-response">
+	<rge:velocity-processor file="classpath:/template.ftl"/>
+</rg:create-response>
+
+<rg:create-response source="unformatted-response">
+	<rge:velocity-processor>The response was: ${value}</rge:velocity-processor>
+</rg:create-response>
+```
+
+the parameter value is made available to the template as simply ``value``. the template text can be specified in the element text or drawn in from a file.
+
 ### xml-schema-validator
+
+an xml-schema-validator is a ``value-processor`` that validates a parameter value against an xml-schema file.
+
+```xml
+<rg:create-response source="response">
+	<rge:xml-schema-validator file="classpath:/response_schema.xsd"/>
+</rg:create-response>
+```
+
+validating a parameter value can be useful in ensuring that your configured logic and processing always returns valid responses. if the value fails validation, an exception is thrown; if it passes, the value is passed through unchanged.
