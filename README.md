@@ -119,7 +119,7 @@ a freemarker-processor processes a parameter value, formatting the value using a
 
 ```xml
 <rg:create-response source="unformatted-response">
-	<rge:freemarker-processor file="classpath://template.ftl"/>
+	<rge:freemarker-processor file="classpath:/template.ftl"/>
 </rg:create-response>
 
 <rg:create-response source="unformatted-response">
@@ -135,7 +135,7 @@ a velocity-processor processes a parameter value, formatting the value using a v
 
 ```xml
 <rg:create-response source="unformatted-response">
-	<rge:velocity-processor file="classpath://template.ftl"/>
+	<rge:velocity-processor file="classpath:/template.ftl"/>
 </rg:create-response>
 
 <rg:create-response source="unformatted-response">
@@ -151,7 +151,7 @@ an xml-schema-validator is a ``value-processor`` that validates a parameter valu
 
 ```xml
 <rg:create-response source="response">
-	<rge:xml-schema-validator file="classpath://response_schema.xsd"/>
+	<rge:xml-schema-validator file="classpath:/response_schema.xsd"/>
 </rg:create-response>
 ```
 
