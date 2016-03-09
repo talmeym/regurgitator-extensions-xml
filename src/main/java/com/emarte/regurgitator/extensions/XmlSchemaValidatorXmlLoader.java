@@ -6,9 +6,10 @@ import org.dom4j.Element;
 import java.util.Set;
 
 import static com.emarte.regurgitator.core.CoreConfigConstants.FILE;
+import static com.emarte.regurgitator.core.Log.getLog;
 
 public class XmlSchemaValidatorXmlLoader implements XmlLoader<XmlSchemaValidator> {
-	private static final Log log = Log.getLog(XmlSchemaValidatorXmlLoader.class);
+	private static final Log log = getLog(XmlSchemaValidatorXmlLoader.class);
 
     @Override
     public XmlSchemaValidator load(Element element, Set<Object> allIds) throws RegurgitatorException {

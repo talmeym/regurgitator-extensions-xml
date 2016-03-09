@@ -6,11 +6,12 @@ import org.dom4j.Element;
 import java.util.Set;
 
 import static com.emarte.regurgitator.core.CoreConfigConstants.*;
+import static com.emarte.regurgitator.core.Log.getLog;
 import static com.emarte.regurgitator.core.XmlConfigUtil.*;
 import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.NAMESPACES;
 
 public class XmlParameterXmlLoader extends XmlParameterLoader implements XmlLoader<Step> {
-    private static final Log log = Log.getLog(XmlParameter.class);
+    private static final Log log = getLog(XmlParameter.class);
 	private static final XpathProcessorXmlLoader XPATH_LOADER = new XpathProcessorXmlLoader();
 
     @Override

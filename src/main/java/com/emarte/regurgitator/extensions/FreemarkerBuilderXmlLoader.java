@@ -6,11 +6,12 @@ import org.dom4j.Element;
 import java.util.Set;
 
 import static com.emarte.regurgitator.core.CoreConfigConstants.*;
+import static com.emarte.regurgitator.core.Log.getLog;
 import static com.emarte.regurgitator.core.XmlConfigUtil.loadOptionalBoolean;
 import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.ALL_CONTEXTS;
 
 public class FreemarkerBuilderXmlLoader extends FreemarkerBuilderLoader implements XmlLoader<ValueBuilder> {
-	private static final Log log = Log.getLog(FreemarkerBuilderXmlLoader.class);
+	private static final Log log = getLog(FreemarkerBuilderXmlLoader.class);
 
     @Override
     public ValueBuilder load(Element element, Set<Object> allIds) throws RegurgitatorException {

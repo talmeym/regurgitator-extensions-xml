@@ -6,9 +6,10 @@ import org.dom4j.Element;
 import java.util.Set;
 
 import static com.emarte.regurgitator.core.CoreConfigConstants.FILE;
+import static com.emarte.regurgitator.core.Log.getLog;
 
 public class FreemarkerProcessorXmlLoader extends FreemarkerProcessorLoader implements XmlLoader<ValueProcessor> {
-	private static final Log log = Log.getLog(FreemarkerProcessorXmlLoader.class);
+	private static final Log log = getLog(FreemarkerProcessorXmlLoader.class);
 
     @Override
     public ValueProcessor load(Element element, Set<Object> allIds) throws RegurgitatorException {

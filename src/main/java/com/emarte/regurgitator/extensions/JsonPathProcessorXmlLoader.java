@@ -5,8 +5,10 @@ import org.dom4j.Element;
 
 import java.util.Set;
 
+import static com.emarte.regurgitator.core.Log.getLog;
+
 public class JsonPathProcessorXmlLoader implements XmlLoader<JsonPathProcessor> {
-	private static final Log log = Log.getLog(JsonPathProcessor.class);
+	private static final Log log = getLog(JsonPathProcessor.class);
 
 	@Override
 	public JsonPathProcessor load(Element element, Set<Object> allIds) throws RegurgitatorException {

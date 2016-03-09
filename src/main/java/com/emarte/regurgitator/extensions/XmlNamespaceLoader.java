@@ -5,10 +5,11 @@ import org.dom4j.Element;
 
 import java.util.*;
 
+import static com.emarte.regurgitator.core.Log.getLog;
 import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.*;
 
 public class XmlNamespaceLoader extends NamespaceLoader {
-	private static final Log log = Log.getLog(XmlNamespaceLoader.class);
+	private static final Log log = getLog(XmlNamespaceLoader.class);
 
 	public static Map<String, String> loadNamespaces(Element element, String attribute) throws RegurgitatorException {
 		if(element != null && attribute != null) {
