@@ -1,11 +1,13 @@
 package com.emarte.regurgitator.extensions;
 
 import com.emarte.regurgitator.core.*;
-import org.dom4j.Element;
+import org.w3c.dom.Element;
 
 import java.util.*;
 
 import static com.emarte.regurgitator.core.Log.getLog;
+import static com.emarte.regurgitator.core.XmlConfigUtil.getAttribute;
+import static com.emarte.regurgitator.core.XmlConfigUtil.getChildElements;
 import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.*;
 
 public class XmlNamespaceLoader extends NamespaceLoader {
@@ -26,10 +28,11 @@ public class XmlNamespaceLoader extends NamespaceLoader {
 	public static Map<String, String> loadNamespaces(Element element) {
 		Map<String, String> namespaceMap = new HashMap<String,  String>();
 
-		for (Iterator i = element.elementIterator(NAMESPACE); i.hasNext(); ) {
-			Element namespace = (Element) i.next();
-			String prefix = namespace.attributeValue(NAMESPACE_PREFIX);
-			String uri = namespace.attributeValue(NAMESPACE_URI);
+		List<Element> namespaces = getChildElements(element, NAMESPACE);
+
+		for (Element namespace: namespaces) {
+			String prefix = getAttribute(namespace, NAMESPACE_PREFIX);
+			String uri = getAttribute(namespace, NAMESPACE_URI);
 			namespaceMap.put(prefix, uri);
 			log.debug("Loaded namespace '" + prefix + "=" + uri + "'");
 		}

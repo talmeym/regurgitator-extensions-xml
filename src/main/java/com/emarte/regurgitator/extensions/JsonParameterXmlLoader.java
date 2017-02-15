@@ -1,7 +1,7 @@
 package com.emarte.regurgitator.extensions;
 
 import com.emarte.regurgitator.core.*;
-import org.dom4j.Element;
+import org.w3c.dom.Element;
 
 import java.util.Set;
 
@@ -15,10 +15,10 @@ public class JsonParameterXmlLoader extends JsonParameterLoader implements XmlLo
 
     @Override
     public Step load(Element element, Set<Object> allIds) throws RegurgitatorException {
-		String jsonPath = element.attributeValue(JSONPATH);
-		String source = element.attributeValue(SOURCE);
-		String value = element.attributeValue(VALUE);
-		String file = element.attributeValue(FILE);
+		String jsonPath = getAttribute(element, JSONPATH);
+		String source = getAttribute(element, SOURCE);
+		String value = getAttribute(element, VALUE);
+		String file = getAttribute(element, FILE);
 		ValueProcessor processor = loadOptionalValueProcessor(element, 0, allIds);
 		return buildJsonParameter(loadId(element, allIds), loadPrototype(element), loadContext(element), source, value, file, processor, jsonPath, log);
     }

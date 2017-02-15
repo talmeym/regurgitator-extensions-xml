@@ -1,7 +1,7 @@
 package com.emarte.regurgitator.extensions;
 
 import com.emarte.regurgitator.core.*;
-import org.dom4j.Element;
+import org.w3c.dom.Element;
 
 import java.util.Set;
 
@@ -17,10 +17,10 @@ public class XmlParameterXmlLoader extends XmlParameterLoader implements XmlLoad
     @Override
     public Step load(Element element, Set<Object> allIds) throws RegurgitatorException {
 		XpathProcessor xpathProcessor = XPATH_LOADER.load(element, allIds);
-		String source = element.attributeValue(SOURCE);
-		String value = element.attributeValue(VALUE);
-		String file = element.attributeValue(FILE);
-		ValueProcessor processor = loadOptionalValueProcessor(element, element.element(NAMESPACES) != null ? 1 : 0, allIds);
+		String source = getAttribute(element, SOURCE);
+		String value = getAttribute(element, VALUE);
+		String file = getAttribute(element, FILE);
+		ValueProcessor processor = loadOptionalValueProcessor(element, getChildElement(element, NAMESPACES) != null ? 1 : 0, allIds);
 		return buildXmlParameter(loadId(element, allIds), loadPrototype(element), loadContext(element), source, value, file, processor, xpathProcessor, log);
 	}
 }

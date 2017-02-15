@@ -1,7 +1,7 @@
 package com.emarte.regurgitator.extensions;
 
 import com.emarte.regurgitator.core.*;
-import org.dom4j.Element;
+import org.w3c.dom.Element;
 
 import java.util.Set;
 
@@ -13,6 +13,6 @@ public class JsonPathProcessorXmlLoader implements XmlLoader<JsonPathProcessor> 
 	@Override
 	public JsonPathProcessor load(Element element, Set<Object> allIds) throws RegurgitatorException {
 		log.debug("Loaded json path processor");
-		return new JsonPathProcessor(element.getText());
+		return new JsonPathProcessor(element.getTextContent());
 	}
 }
