@@ -7,6 +7,7 @@ import java.util.*;
 
 import static com.emarte.regurgitator.core.Log.getLog;
 import static com.emarte.regurgitator.core.XmlConfigUtil.getAttribute;
+import static com.emarte.regurgitator.core.XmlConfigUtil.getChildElement;
 import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.*;
 import static com.emarte.regurgitator.extensions.XmlNamespaceLoader.loadNamespaces;
 
@@ -15,7 +16,7 @@ public class XpathProcessorXmlLoader implements XmlLoader<XpathProcessor> {
 
 	@Override
 	public XpathProcessor load(Element element, Set<Object> allIds) throws RegurgitatorException {
-		Map<String,String> namespaces = loadNamespaces(XmlConfigUtil.getChildElement(element, NAMESPACES), getAttribute(element, NAMESPACES));
+		Map<String,String> namespaces = loadNamespaces(getChildElement(element, NAMESPACES), getAttribute(element, NAMESPACES));
 
 		log.debug("Loaded xpath processor");
 		return new XpathProcessor(getAttribute(element, XPATH), namespaces);
