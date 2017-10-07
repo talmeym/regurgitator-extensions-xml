@@ -1,3 +1,7 @@
+/*
+ * Copyright (C) 2017 Miles Talmey.
+ * Distributed under the MIT License (license terms are at http://opensource.org/licenses/MIT).
+ */
 package com.emarte.regurgitator.extensions;
 
 import com.emarte.regurgitator.core.*;
@@ -12,24 +16,24 @@ import static com.emarte.regurgitator.core.XmlConfigUtil.loadOptionalBoolean;
 import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.ALL_CONTEXTS;
 
 public class FreemarkerBuilderXmlLoader extends FreemarkerBuilderLoader implements XmlLoader<ValueBuilder> {
-	private static final Log log = getLog(FreemarkerBuilderXmlLoader.class);
+    private static final Log log = getLog(FreemarkerBuilderXmlLoader.class);
 
     @Override
     public ValueBuilder load(Element element, Set<Object> allIds) throws RegurgitatorException {
-		String source = getAttribute(element, SOURCE);
-		String valueAttr = getAttribute(element, VALUE);
-		String valueText = element.getTextContent();
+        String source = getAttribute(element, SOURCE);
+        String valueAttr = getAttribute(element, VALUE);
+        String valueText = element.getTextContent();
 
-		if(valid(valueAttr) && valid(valueText)) {
-			throw new RegurgitatorException("Value cannot be defined in text and attribute");
-		}
+        if(valid(valueAttr) && valid(valueText)) {
+            throw new RegurgitatorException("Value cannot be defined in text and attribute");
+        }
 
-		String value = valid(valueAttr) ? valueAttr : valid(valueText) ? valueText : null;
-		String file = getAttribute(element, FILE);
-		return buildFreemarkerValueBuilder(source, value, file, loadOptionalBoolean(element, ALL_CONTEXTS), log);
+        String value = valid(valueAttr) ? valueAttr : valid(valueText) ? valueText : null;
+        String file = getAttribute(element, FILE);
+        return buildFreemarkerValueBuilder(source, value, file, loadOptionalBoolean(element, ALL_CONTEXTS), log);
     }
 
-	private boolean valid(String text) {
-		return text != null && text.length() > 0;
-	}
+    private boolean valid(String text) {
+        return text != null && text.length() > 0;
+    }
 }

@@ -1,3 +1,7 @@
+/*
+ * Copyright (C) 2017 Miles Talmey.
+ * Distributed under the MIT License (license terms are at http://opensource.org/licenses/MIT).
+ */
 package com.emarte.regurgitator.extensions;
 
 import com.emarte.regurgitator.core.*;
@@ -11,12 +15,12 @@ import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.NAMES
 import static com.emarte.regurgitator.extensions.XmlNamespaceLoader.loadNamespaces;
 
 public class ContainsXpathXmlLoader implements XmlLoader<ContainsXpath> {
-	private static final Log log = getLog(ContainsXpathXmlLoader.class);
+    private static final Log log = getLog(ContainsXpathXmlLoader.class);
 
-	@Override
-	public ContainsXpath load(Element element, Set<Object> allIds) throws RegurgitatorException {
-		Map<String,String> namspaces = loadNamespaces(getAttribute(element, NAMESPACES), log);
-		log.debug("Loaded ContainsXath");
-		return new ContainsXpath(namspaces);
-	}
+    @Override
+    public ContainsXpath load(Element element, Set<Object> allIds) throws RegurgitatorException {
+        Map<String,String> namespaces = loadNamespaces(getAttribute(element, NAMESPACES), log);
+        log.debug("Loaded contains xpath");
+        return new ContainsXpath(namespaces);
+    }
 }
