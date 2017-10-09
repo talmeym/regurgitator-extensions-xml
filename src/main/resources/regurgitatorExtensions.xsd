@@ -9,42 +9,42 @@
     <xs:complexType name="xml-parameter">
         <xs:sequence>
             <xs:element name="namespaces" type="rge:namespaces" minOccurs="0"/>
-			<xs:any maxOccurs="1" minOccurs="0"/>
+            <xs:any maxOccurs="1" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="rgc:prototyped"/>
-		<xs:attribute name="source" type="rgc:populated-string"/>
-		<xs:attribute name="value" type="rgc:populated-string"/>
-		<xs:attribute name="file" type="rgc:populated-string"/>
-		<xs:attribute name="xpath" type="rgc:populated-string"/>
-		<xs:attribute name="namespaces" type="rgc:populated-string"/>
-		<xs:attribute name="processor" type="rgc:populated-string"/>
-	</xs:complexType>
+        <xs:attribute name="source" type="rgc:populated-string"/>
+        <xs:attribute name="value" type="rgc:populated-string"/>
+        <xs:attribute name="file" type="rgc:populated-string"/>
+        <xs:attribute name="xpath" type="rgc:populated-string"/>
+        <xs:attribute name="namespaces" type="rgc:populated-string"/>
+        <xs:attribute name="processor" type="rgc:populated-string"/>
+    </xs:complexType>
 
     <xs:complexType name="xpath-processor">
         <xs:sequence>
             <xs:element name="namespaces" type="rge:namespaces" minOccurs="0"/>
         </xs:sequence>
-		<xs:attribute name="xpath" type="rgc:populated-string"/>
-		<xs:attribute name="namespaces" type="rgc:populated-string"/>
-	</xs:complexType>
+        <xs:attribute name="xpath" type="rgc:populated-string"/>
+        <xs:attribute name="namespaces" type="rgc:populated-string"/>
+    </xs:complexType>
 
-	<xs:complexType name="json-path-processor">
-		<xs:simpleContent>
-			<xs:extension base="rgc:populated-string">
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
+    <xs:complexType name="json-path-processor">
+        <xs:simpleContent>
+            <xs:extension base="rgc:populated-string">
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
 
     <xs:complexType name="json-parameter">
         <xs:sequence>
-			<xs:any maxOccurs="1" minOccurs="0"/>
+            <xs:any maxOccurs="1" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="rgc:prototyped"/>
-		<xs:attribute name="source" type="rgc:populated-string"/>
-		<xs:attribute name="value" type="rgc:populated-string"/>
-		<xs:attribute name="file" type="rgc:populated-string"/>
-		<xs:attribute name="json-path" type="rgc:populated-string" use="required"/>
-		<xs:attribute name="processor" type="rgc:populated-string"/>
+        <xs:attribute name="source" type="rgc:populated-string"/>
+        <xs:attribute name="value" type="rgc:populated-string"/>
+        <xs:attribute name="file" type="rgc:populated-string"/>
+        <xs:attribute name="json-path" type="rgc:populated-string" use="required"/>
+        <xs:attribute name="processor" type="rgc:populated-string"/>
     </xs:complexType>
 
     <xs:complexType name="namespace">
@@ -59,59 +59,59 @@
     </xs:complexType>
 
     <xs:complexType name="freemarker-builder">
-		<xs:simpleContent>
-			<xs:extension base="xs:string">
-				<xs:attribute name="file" type="rgc:populated-string"/>
-				<xs:attribute name="value" type="rgc:populated-string"/>
-				<xs:attribute name="source" type="rgc:populated-string"/>
-				<xs:attribute name="all-contexts" type="xs:boolean"/>
-			</xs:extension>
-		</xs:simpleContent>
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="file" type="rgc:populated-string"/>
+                <xs:attribute name="value" type="rgc:populated-string"/>
+                <xs:attribute name="source" type="rgc:populated-string"/>
+                <xs:attribute name="all-contexts" type="xs:boolean"/>
+            </xs:extension>
+        </xs:simpleContent>
     </xs:complexType>
 
     <xs:complexType name="freemarker-processor">
-		<xs:simpleContent>
-			<xs:extension base="xs:string">
-				<xs:attribute name="file" type="rgc:populated-string"/>
-			</xs:extension>
-		</xs:simpleContent>
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="file" type="rgc:populated-string"/>
+            </xs:extension>
+        </xs:simpleContent>
     </xs:complexType>
 
     <xs:complexType name="velocity-builder">
-		<xs:simpleContent>
-			<xs:extension base="xs:string">
-				<xs:attribute name="file" type="rgc:populated-string"/>
-				<xs:attribute name="value" type="rgc:populated-string"/>
-				<xs:attribute name="source" type="rgc:populated-string"/>
-				<xs:attribute name="all-contexts" type="xs:boolean"/>
-			</xs:extension>
-		</xs:simpleContent>
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="file" type="rgc:populated-string"/>
+                <xs:attribute name="value" type="rgc:populated-string"/>
+                <xs:attribute name="source" type="rgc:populated-string"/>
+                <xs:attribute name="all-contexts" type="xs:boolean"/>
+            </xs:extension>
+        </xs:simpleContent>
     </xs:complexType>
 
-	<xs:complexType name="velocity-processor">
-		<xs:simpleContent>
-			<xs:extension base="xs:string">
-				<xs:attribute name="file" type="rgc:populated-string"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
+    <xs:complexType name="velocity-processor">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="file" type="rgc:populated-string"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
 
     <xs:complexType name="xml-schema-validator">
-		<xs:attribute name="file" type="rgc:populated-string"/>
+        <xs:attribute name="file" type="rgc:populated-string"/>
     </xs:complexType>
 
     <xs:complexType name="contains-json-path">
-		<xs:simpleContent>
-			<xs:extension base="rgc:populated-string"/>
-		</xs:simpleContent>
+        <xs:simpleContent>
+            <xs:extension base="rgc:populated-string"/>
+        </xs:simpleContent>
     </xs:complexType>
 
     <xs:complexType name="contains-xpath">
-		<xs:simpleContent>
-			<xs:extension base="rgc:populated-string">
-				<xs:attribute name="namespaces" type="rgc:populated-string"/>
-			</xs:extension>
-		</xs:simpleContent>
+        <xs:simpleContent>
+            <xs:extension base="rgc:populated-string">
+                <xs:attribute name="namespaces" type="rgc:populated-string"/>
+            </xs:extension>
+        </xs:simpleContent>
     </xs:complexType>
 
     <xs:element name="freemarker-builder" type="rge:freemarker-builder"/>
@@ -119,10 +119,10 @@
     <xs:element name="velocity-builder" type="rge:velocity-builder"/>
     <xs:element name="velocity-processor" type="rge:velocity-processor"/>
     <xs:element name="xml-schema-validator" type="rge:xml-schema-validator"/>
-	<xs:element name="json-parameter" type="rge:json-parameter"/>
-	<xs:element name="xml-parameter" type="rge:xml-parameter"/>
-	<xs:element name="json-path-processor" type="rge:json-path-processor"/>
-	<xs:element name="xpath-processor" type="rge:xpath-processor"/>
-	<xs:element name="contains-json-path" type="rge:contains-json-path"/>
-	<xs:element name="contains-xpath" type="rge:contains-xpath"/>
+    <xs:element name="json-parameter" type="rge:json-parameter"/>
+    <xs:element name="xml-parameter" type="rge:xml-parameter"/>
+    <xs:element name="json-path-processor" type="rge:json-path-processor"/>
+    <xs:element name="xpath-processor" type="rge:xpath-processor"/>
+    <xs:element name="contains-json-path" type="rge:contains-json-path"/>
+    <xs:element name="contains-xpath" type="rge:contains-xpath"/>
 </xs:schema>
