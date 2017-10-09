@@ -22,9 +22,9 @@ an xml-parameter creates a parameter, extracting its value from within an xml do
 
 ```xml
 <rge:xml-parameter name="book-name" source="book-catalogue" xpath="/bk:catalogue/bk:book/bk:name">
-	<rge:namespaces>
-		<rge:namespace prefix="bk" uri="http://books.com"/>
-	</rge:namespaces>
+    <rge:namespaces>
+        <rge:namespace prefix="bk" uri="http://books.com"/>
+    </rge:namespaces>
 </rge:xml-parameter>
 ```
 
@@ -48,11 +48,11 @@ a freemarker-builder builds from just the ``parameters`` context by default. if 
 
 ```xml
 <rge:freemarker-builder all-contexts="true">
-	{
-		"response": "${response_payload.text}",
-		"status-code": ${response-metadata.status_code},
-		"content-type": "${response-metadata.content_type}"
-	}
+    {
+        "response": "${response_payload.text}",
+        "status-code": ${response-metadata.status_code},
+        "content-type": "${response-metadata.content_type}"
+    }
 </rge:freemarker-builder>
 ```
 
@@ -74,11 +74,11 @@ a velocity-builder builds from just the ``parameters`` context by default. if th
 
 ```xml
 <rge:velocity-builder all-contexts="true">
-	{
-		"response": "${response_payload.text}",
-		"status-code": ${response-metadata.status_code},
-		"content-type": "${response-metadata.content_type}"
-	}
+    {
+        "response": "${response_payload.text}",
+        "status-code": ${response-metadata.status_code},
+        "content-type": "${response-metadata.content_type}"
+    }
 </rge:velocity-builder>
 ```
 
@@ -88,7 +88,7 @@ a json-path-processor processes a parameter value, extracting a value from it us
 
 ```xml
 <rg:create-parameter name="book-name" source="book-catalogue">
-	<rge:json-path-processor>$.catalogue.book.name</rge:json-path-processor>
+    <rge:json-path-processor>$.catalogue.book.name</rge:json-path-processor>
 </rg:create-parameter>
 ```
 
@@ -98,7 +98,7 @@ an xpath-processor processes a parameter value, extracting a value from it using
 
 ```xml
 <rg:create-parameter name="book-name" source="book-catalogue">
-	<rge:xpath-processor namespaces="cat=http://catalogues.com,bk=http://books.com" xpath="/cat:catalogue/bk:book/@name"/>
+    <rge:xpath-processor namespaces="cat=http://catalogues.com,bk=http://books.com" xpath="/cat:catalogue/bk:book/@name"/>
 </rg:create-parameter>
 ```
 
@@ -106,12 +106,12 @@ namespaces for an xpath-processor can also be declared as a child element of the
 
 ```xml
 <rg:create-parameter name="book-name" source="book-catalogue">
-	<rge:xpath-processor xpath="/cat:catalogue/bk:book/@name">
-		<rge:namespaces>
-			<rge:namespace prefix="cat" uri="http://catalogues.com"/>
-			<rge:namespace prefix="bk" uri="http://books.com"/>
-		</rge:namespaces>
-	</rge:xpath-processor>
+    <rge:xpath-processor xpath="/cat:catalogue/bk:book/@name">
+        <rge:namespaces>
+            <rge:namespace prefix="cat" uri="http://catalogues.com"/>
+            <rge:namespace prefix="bk" uri="http://books.com"/>
+        </rge:namespaces>
+    </rge:xpath-processor>
 </rg:create-parameter>
 ```
 
@@ -121,11 +121,11 @@ a freemarker-processor processes a parameter value, formatting the value using a
 
 ```xml
 <rg:create-response source="unformatted-response">
-	<rge:freemarker-processor file="classpath:/template.ftl"/>
+    <rge:freemarker-processor file="classpath:/template.ftl"/>
 </rg:create-response>
 
 <rg:create-response source="unformatted-response">
-	<rge:freemarker-processor>The response was: ${value}</rge:freemarker-processor>
+    <rge:freemarker-processor>The response was: ${value}</rge:freemarker-processor>
 </rg:create-response>
 ```
 
@@ -137,11 +137,11 @@ a velocity-processor processes a parameter value, formatting the value using a v
 
 ```xml
 <rg:create-response source="unformatted-response">
-	<rge:velocity-processor file="classpath:/template.ftl"/>
+    <rge:velocity-processor file="classpath:/template.ftl"/>
 </rg:create-response>
 
 <rg:create-response source="unformatted-response">
-	<rge:velocity-processor>The response was: ${value}</rge:velocity-processor>
+    <rge:velocity-processor>The response was: ${value}</rge:velocity-processor>
 </rg:create-response>
 ```
 
@@ -153,7 +153,7 @@ an xml-schema-validator is a ``value-processor`` that validates a parameter valu
 
 ```xml
 <rg:create-response source="response">
-	<rge:xml-schema-validator file="classpath:/response_schema.xsd"/>
+    <rge:xml-schema-validator file="classpath:/response_schema.xsd"/>
 </rg:create-response>
 ```
 
