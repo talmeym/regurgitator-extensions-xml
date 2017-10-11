@@ -7,12 +7,14 @@ package com.emarte.regurgitator.extensions;
 import com.emarte.regurgitator.core.*;
 import org.w3c.dom.Element;
 
-import java.util.*;
+import java.util.Map;
+import java.util.Set;
 
 import static com.emarte.regurgitator.core.Log.getLog;
 import static com.emarte.regurgitator.core.XmlConfigUtil.getAttribute;
 import static com.emarte.regurgitator.core.XmlConfigUtil.getChildElement;
-import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.*;
+import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.NAMESPACES;
+import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.XPATH;
 import static com.emarte.regurgitator.extensions.XmlNamespaceLoader.loadNamespaces;
 
 public class XpathProcessorXmlLoader implements XmlLoader<XpathProcessor> {
