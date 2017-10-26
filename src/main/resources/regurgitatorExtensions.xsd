@@ -73,6 +73,7 @@
         <xs:simpleContent>
             <xs:extension base="xs:string">
                 <xs:attribute name="file" type="rgc:populated-string"/>
+                <xs:attribute name="value" type="rgc:populated-string"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
