@@ -11,7 +11,7 @@ import java.util.Set;
 
 import static com.emarte.regurgitator.core.CoreConfigConstants.FILE;
 import static com.emarte.regurgitator.core.Log.getLog;
-import static com.emarte.regurgitator.core.XmlConfigUtil.getAttribute;
+import static com.emarte.regurgitator.core.XmlConfigUtil.loadOptionalStr;
 
 public class VelocityProcessorXmlLoader extends VelocityProcessorLoader implements XmlLoader<ValueProcessor> {
     private static final Log log = getLog(VelocityProcessorXmlLoader.class);
@@ -20,7 +20,7 @@ public class VelocityProcessorXmlLoader extends VelocityProcessorLoader implemen
     public ValueProcessor load(Element element, Set<Object> allIds) throws RegurgitatorException {
         String text = element.getTextContent();
         String value = text != null && text.length() > 0 ? text : null;
-        String file = getAttribute(element, FILE);
+        String file = loadOptionalStr(element, FILE);
         return buildVelocityValueProcessor(value, file, log);
     }
 }

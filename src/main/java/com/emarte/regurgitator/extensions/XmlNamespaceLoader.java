@@ -11,7 +11,7 @@ import org.w3c.dom.Element;
 import java.util.*;
 
 import static com.emarte.regurgitator.core.Log.getLog;
-import static com.emarte.regurgitator.core.XmlConfigUtil.getAttribute;
+import static com.emarte.regurgitator.core.XmlConfigUtil.loadOptionalStr;
 import static com.emarte.regurgitator.core.XmlConfigUtil.getChildElements;
 import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.*;
 
@@ -36,8 +36,8 @@ class XmlNamespaceLoader extends NamespaceLoader {
         List<Element> namespaces = getChildElements(element, NAMESPACE);
 
         for (Element namespace: namespaces) {
-            String prefix = getAttribute(namespace, NAMESPACE_PREFIX);
-            String uri = getAttribute(namespace, NAMESPACE_URI);
+            String prefix = loadOptionalStr(namespace, NAMESPACE_PREFIX);
+            String uri = loadOptionalStr(namespace, NAMESPACE_URI);
             namespaceMap.put(prefix, uri);
             log.debug("Loaded namespace '{}={}'", prefix, uri);
         }

@@ -11,7 +11,7 @@ import java.util.Set;
 
 import static com.emarte.regurgitator.core.CoreConfigConstants.FILE;
 import static com.emarte.regurgitator.core.Log.getLog;
-import static com.emarte.regurgitator.core.XmlConfigUtil.getAttribute;
+import static com.emarte.regurgitator.core.XmlConfigUtil.loadOptionalStr;
 
 public class XmlSchemaValidatorXmlLoader implements XmlLoader<XmlSchemaValidator> {
     private static final Log log = getLog(XmlSchemaValidatorXmlLoader.class);
@@ -19,6 +19,6 @@ public class XmlSchemaValidatorXmlLoader implements XmlLoader<XmlSchemaValidator
     @Override
     public XmlSchemaValidator load(Element element, Set<Object> allIds) throws RegurgitatorException {
         log.debug("Loaded xml schema validator");
-        return new XmlSchemaValidator(getAttribute(element, FILE));
+        return new XmlSchemaValidator(loadOptionalStr(element, FILE));
     }
 }

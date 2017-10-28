@@ -12,14 +12,14 @@ import java.util.Set;
 import static com.emarte.regurgitator.core.CoreConfigConstants.FILE;
 import static com.emarte.regurgitator.core.CoreConfigConstants.VALUE;
 import static com.emarte.regurgitator.core.Log.getLog;
-import static com.emarte.regurgitator.core.XmlConfigUtil.getAttribute;
+import static com.emarte.regurgitator.core.XmlConfigUtil.loadOptionalStr;
 
 public class FreemarkerProcessorXmlLoader extends FreemarkerProcessorLoader implements XmlLoader<ValueProcessor> {
     private static final Log log = getLog(FreemarkerProcessorXmlLoader.class);
 
     @Override
     public ValueProcessor load(Element element, Set<Object> allIds) throws RegurgitatorException {
-        String valueAttr = getAttribute(element, VALUE);
+        String valueAttr = loadOptionalStr(element, VALUE);
         String valueText = element.getTextContent();
 
         if(valid(valueAttr) && valid(valueText)) {
@@ -27,7 +27,7 @@ public class FreemarkerProcessorXmlLoader extends FreemarkerProcessorLoader impl
         }
 
         String value = valid(valueAttr) ? valueAttr : valid(valueText) ? valueText : null;
-        String file = getAttribute(element, FILE);
+        String file = loadOptionalStr(element, FILE);
         return buildFreemarkerValueProcessor(value, file, log);
     }
 

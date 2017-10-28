@@ -19,10 +19,10 @@ public class JsonParameterXmlLoader extends JsonParameterLoader implements XmlLo
 
     @Override
     public Step load(Element element, Set<Object> allIds) throws RegurgitatorException {
-        String jsonPath = getAttribute(element, JSONPATH);
-        String source = getAttribute(element, SOURCE);
-        String value = getAttribute(element, VALUE);
-        String file = getAttribute(element, FILE);
+        String jsonPath = loadMandatoryStr(element, JSONPATH);
+        String source = loadOptionalStr(element, SOURCE);
+        String value = loadOptionalStr(element, VALUE);
+        String file = loadOptionalStr(element, FILE);
         ValueProcessor processor = loadOptionalValueProcessor(element, 0, allIds);
         return buildJsonParameter(loadId(element, allIds), loadPrototype(element), loadContext(element), source, value, file, processor, jsonPath, log);
     }
