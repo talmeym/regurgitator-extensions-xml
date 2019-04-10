@@ -8,11 +8,13 @@ import com.emarte.regurgitator.core.Log;
 import com.emarte.regurgitator.core.RegurgitatorException;
 import org.w3c.dom.Element;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static com.emarte.regurgitator.core.Log.getLog;
-import static com.emarte.regurgitator.core.XmlConfigUtil.loadOptionalStr;
 import static com.emarte.regurgitator.core.XmlConfigUtil.getChildElements;
+import static com.emarte.regurgitator.core.XmlConfigUtil.loadOptionalStr;
 import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.*;
 
 class XmlNamespaceLoader extends NamespaceLoader {

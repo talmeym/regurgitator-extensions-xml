@@ -9,7 +9,7 @@
     <xs:complexType name="xml-parameter">
         <xs:sequence>
             <xs:element name="namespaces" type="rge:namespaces" minOccurs="0"/>
-            <xs:any maxOccurs="1" minOccurs="0"/>
+            <xs:any minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="rgc:prototyped"/>
         <xs:attribute name="source" type="rgc:populated-string"/>
@@ -37,7 +37,7 @@
 
     <xs:complexType name="json-parameter">
         <xs:sequence>
-            <xs:any maxOccurs="1" minOccurs="0"/>
+            <xs:any minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="rgc:prototyped"/>
         <xs:attribute name="source" type="rgc:populated-string"/>

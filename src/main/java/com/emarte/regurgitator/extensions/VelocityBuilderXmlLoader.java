@@ -4,15 +4,18 @@
  */
 package com.emarte.regurgitator.extensions;
 
-import com.emarte.regurgitator.core.*;
+import com.emarte.regurgitator.core.Log;
+import com.emarte.regurgitator.core.RegurgitatorException;
+import com.emarte.regurgitator.core.ValueBuilder;
+import com.emarte.regurgitator.core.XmlLoader;
 import org.w3c.dom.Element;
 
 import java.util.Set;
 
 import static com.emarte.regurgitator.core.CoreConfigConstants.*;
 import static com.emarte.regurgitator.core.Log.getLog;
-import static com.emarte.regurgitator.core.XmlConfigUtil.loadOptionalStr;
 import static com.emarte.regurgitator.core.XmlConfigUtil.loadOptionalBool;
+import static com.emarte.regurgitator.core.XmlConfigUtil.loadOptionalStr;
 import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.ALL_CONTEXTS;
 
 public class VelocityBuilderXmlLoader extends VelocityBuilderLoader implements XmlLoader<ValueBuilder> {

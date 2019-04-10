@@ -7,6 +7,7 @@ package com.emarte.regurgitator.extensions;
 import com.emarte.regurgitator.core.*;
 import org.w3c.dom.Element;
 
+import java.util.List;
 import java.util.Set;
 
 import static com.emarte.regurgitator.core.CoreConfigConstants.*;
@@ -24,7 +25,7 @@ public class XmlParameterXmlLoader extends XmlParameterLoader implements XmlLoad
         String source = loadOptionalStr(element, SOURCE);
         String value = loadOptionalStr(element, VALUE);
         String file = loadOptionalStr(element, FILE);
-        ValueProcessor processor = loadOptionalValueProcessor(element, getChildElement(element, NAMESPACES) != null ? 1 : 0, allIds);
-        return buildXmlParameter(loadId(element, allIds), loadPrototype(element), loadContext(element), source, value, file, processor, xpathProcessor, log);
+        List<ValueProcessor> processors = loadOptionalValueProcessors(element, getChildElement(element, NAMESPACES) != null ? 1 : 0, allIds);
+        return buildXmlParameter(loadId(element, allIds), loadPrototype(element), loadContext(element), source, value, file, processors, xpathProcessor, log);
     }
 }

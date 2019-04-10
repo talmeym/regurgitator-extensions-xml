@@ -4,7 +4,8 @@
  */
 package com.emarte.regurgitator.extensions;
 
-import com.emarte.regurgitator.core.*;
+import com.emarte.regurgitator.core.Log;
+import com.emarte.regurgitator.core.XmlLoader;
 import org.w3c.dom.Element;
 
 import java.util.Map;
@@ -19,7 +20,7 @@ public class ContainsXpathXmlLoader implements XmlLoader<ContainsXpath> {
     private static final Log log = getLog(ContainsXpathXmlLoader.class);
 
     @Override
-    public ContainsXpath load(Element element, Set<Object> allIds) throws RegurgitatorException {
+    public ContainsXpath load(Element element, Set<Object> allIds) {
         Map<String,String> namespaces = loadNamespaces(loadOptionalStr(element, NAMESPACES), log);
         log.debug("Loaded contains xpath");
         return new ContainsXpath(namespaces);

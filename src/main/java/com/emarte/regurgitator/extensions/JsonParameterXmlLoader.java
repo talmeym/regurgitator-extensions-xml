@@ -7,6 +7,7 @@ package com.emarte.regurgitator.extensions;
 import com.emarte.regurgitator.core.*;
 import org.w3c.dom.Element;
 
+import java.util.List;
 import java.util.Set;
 
 import static com.emarte.regurgitator.core.CoreConfigConstants.*;
@@ -23,7 +24,7 @@ public class JsonParameterXmlLoader extends JsonParameterLoader implements XmlLo
         String source = loadOptionalStr(element, SOURCE);
         String value = loadOptionalStr(element, VALUE);
         String file = loadOptionalStr(element, FILE);
-        ValueProcessor processor = loadOptionalValueProcessor(element, 0, allIds);
-        return buildJsonParameter(loadId(element, allIds), loadPrototype(element), loadContext(element), source, value, file, processor, jsonPath, log);
+        List<ValueProcessor> processors = loadOptionalValueProcessors(element, 0, allIds);
+        return buildJsonParameter(loadId(element, allIds), loadPrototype(element), loadContext(element), source, value, file, processors, jsonPath, log);
     }
 }
