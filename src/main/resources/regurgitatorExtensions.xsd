@@ -18,6 +18,7 @@
         <xs:attribute name="xpath" type="rgc:populated-string"/>
         <xs:attribute name="namespaces" type="rgc:populated-string"/>
         <xs:attribute name="processor" type="rgc:populated-string"/>
+        <xs:attribute name="processors" type="rgc:populated-string"/>
     </xs:complexType>
 
     <xs:complexType name="xpath-processor">
@@ -45,6 +46,7 @@
         <xs:attribute name="file" type="rgc:populated-string"/>
         <xs:attribute name="json-path" type="rgc:populated-string" use="required"/>
         <xs:attribute name="processor" type="rgc:populated-string"/>
+        <xs:attribute name="processors" type="rgc:populated-string"/>
     </xs:complexType>
 
     <xs:complexType name="namespace">
