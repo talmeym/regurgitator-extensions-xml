@@ -36,6 +36,9 @@
         </xs:simpleContent>
     </xs:complexType>
 
+    <xs:complexType name="json-print-processor">
+    </xs:complexType>
+
     <xs:complexType name="json-parameter">
         <xs:sequence>
             <xs:any minOccurs="0" maxOccurs="unbounded"/>
@@ -125,6 +128,7 @@
     <xs:element name="json-parameter" type="rge:json-parameter"/>
     <xs:element name="xml-parameter" type="rge:xml-parameter"/>
     <xs:element name="json-path-processor" type="rge:json-path-processor"/>
+    <xs:element name="json-print-processor" type="rge:json-print-processor"/>
     <xs:element name="xpath-processor" type="rge:xpath-processor"/>
     <xs:element name="contains-json-path" type="rge:contains-json-path"/>
     <xs:element name="contains-xpath" type="rge:contains-xpath"/>
