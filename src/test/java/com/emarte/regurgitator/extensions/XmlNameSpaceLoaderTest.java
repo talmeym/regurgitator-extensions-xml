@@ -6,8 +6,7 @@ package com.emarte.regurgitator.extensions;
 
 import org.junit.Test;
 
-import static junit.framework.Assert.assertEquals;
-
+import static org.junit.Assert.assertEquals;
 public class XmlNameSpaceLoaderTest {
     @Test
     public void testThis() throws Exception {

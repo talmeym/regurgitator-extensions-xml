@@ -33,7 +33,7 @@ class XmlNamespaceLoader extends NamespaceLoader {
     }
 
     private static Map<String, String> loadNamespaces(Element element) {
-        Map<String, String> namespaceMap = new HashMap<String,  String>();
+        Map<String, String> namespaceMap = new HashMap<>();
 
         List<Element> namespaces = getChildElements(element, NAMESPACE);
 
