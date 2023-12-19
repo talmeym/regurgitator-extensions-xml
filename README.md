@@ -36,9 +36,13 @@ a freemarker-builder aggregates parameter values together using a freemarker tem
 
 ```xml
 <rge:freemarker-builder source="template-param"/>
+```
 
+```xml
 <rge:freemarker-builder file="classpath:/template.ftl"/>
+```
 
+```xml
 <rge:freemarker-builder value="This is a ${descriptive} day!"/>
 ```
 
@@ -56,7 +60,9 @@ a freemarker-builder builds from just the ``parameters`` context by default. if 
         </response>
     ]]>
 </rge:freemarker-builder>
+```
 
+```xml
 <rge:freemarker-builder all-contexts="true">
     {
         "payload": "${response_payload.text}",
@@ -72,9 +78,13 @@ a velocity-builder aggregates parameter values together using a freemarker templ
 
 ```xml
 <rge:velocity-builder source="template-param"/>
+```
 
+```xml
 <rge:velocity-builder file="classpath:/template.ftl"/>
+```
 
+```xml
 <rge:velocity-builder value="This is a ${descriptive} day!"/>
 ```
 
@@ -92,7 +102,9 @@ a velocity-builder builds from just the ``parameters`` context by default. if th
         </response>
     ]]>
 </rge:velocity-builder>
+```
 
+```xml
 <rge:velocity-builder all-contexts="true">
     {
         "payload": "${response_payload.text}",
@@ -143,7 +155,9 @@ a freemarker-processor processes a parameter value, formatting the value using a
 <rg:create-response source="unformatted-response">
     <rge:freemarker-processor file="classpath:/template.ftl"/>
 </rg:create-response>
+```
 
+```xml
 <rg:create-response source="unformatted-response">
     <rge:freemarker-processor>The response was: ${value}</rge:freemarker-processor>
 </rg:create-response>
@@ -159,7 +173,9 @@ a velocity-processor processes a parameter value, formatting the value using a v
 <rg:create-response source="unformatted-response">
     <rge:velocity-processor file="classpath:/template.ftl"/>
 </rg:create-response>
+```
 
+```xml
 <rg:create-response source="unformatted-response">
     <rge:velocity-processor>The response was: ${value}</rge:velocity-processor>
 </rg:create-response>
