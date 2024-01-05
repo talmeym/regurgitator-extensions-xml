@@ -83,25 +83,6 @@
         </xs:simpleContent>
     </xs:complexType>
 
-    <xs:complexType name="velocity-builder">
-        <xs:simpleContent>
-            <xs:extension base="xs:string">
-                <xs:attribute name="file" type="rgc:populated-string"/>
-                <xs:attribute name="value" type="rgc:populated-string"/>
-                <xs:attribute name="source" type="rgc:populated-string"/>
-                <xs:attribute name="all-contexts" type="xs:boolean"/>
-            </xs:extension>
-        </xs:simpleContent>
-    </xs:complexType>
-
-    <xs:complexType name="velocity-processor">
-        <xs:simpleContent>
-            <xs:extension base="xs:string">
-                <xs:attribute name="file" type="rgc:populated-string"/>
-            </xs:extension>
-        </xs:simpleContent>
-    </xs:complexType>
-
     <xs:complexType name="xml-schema-validator">
         <xs:attribute name="file" type="rgc:populated-string"/>
     </xs:complexType>
@@ -122,8 +103,6 @@
 
     <xs:element name="freemarker-builder" type="rge:freemarker-builder"/>
     <xs:element name="freemarker-processor" type="rge:freemarker-processor"/>
-    <xs:element name="velocity-builder" type="rge:velocity-builder"/>
-    <xs:element name="velocity-processor" type="rge:velocity-processor"/>
     <xs:element name="xml-schema-validator" type="rge:xml-schema-validator"/>
     <xs:element name="json-parameter" type="rge:json-parameter"/>
     <xs:element name="xml-parameter" type="rge:xml-parameter"/>
