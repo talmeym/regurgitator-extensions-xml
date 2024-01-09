@@ -2,21 +2,21 @@
  * Copyright (C) 2017 Miles Talmey.
  * Distributed under the MIT License (license terms are at http://opensource.org/licenses/MIT).
  */
-package com.emarte.regurgitator.extensions;
+package uk.emarte.regurgitator.extensions;
 
-import com.emarte.regurgitator.core.Log;
-import com.emarte.regurgitator.core.RegurgitatorException;
-import com.emarte.regurgitator.core.ValueBuilder;
-import com.emarte.regurgitator.core.XmlLoader;
+import uk.emarte.regurgitator.core.Log;
+import uk.emarte.regurgitator.core.RegurgitatorException;
+import uk.emarte.regurgitator.core.ValueBuilder;
+import uk.emarte.regurgitator.core.XmlLoader;
 import org.w3c.dom.Element;
 
 import java.util.Set;
 
-import static com.emarte.regurgitator.core.CoreConfigConstants.*;
-import static com.emarte.regurgitator.core.Log.getLog;
-import static com.emarte.regurgitator.core.XmlConfigUtil.loadOptionalBool;
-import static com.emarte.regurgitator.core.XmlConfigUtil.loadOptionalStr;
-import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.ALL_CONTEXTS;
+import static uk.emarte.regurgitator.core.CoreConfigConstants.*;
+import static uk.emarte.regurgitator.core.Log.getLog;
+import static uk.emarte.regurgitator.core.XmlConfigUtil.loadOptionalBool;
+import static uk.emarte.regurgitator.core.XmlConfigUtil.loadOptionalStr;
+import static uk.emarte.regurgitator.extensions.ExtensionsConfigConstants.ALL_CONTEXTS;
 
 public class VelocityBuilderXmlLoader extends VelocityBuilderLoader implements XmlLoader<ValueBuilder> {
     private static final Log log = getLog(VelocityBuilderXmlLoader.class);

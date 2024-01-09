@@ -2,20 +2,20 @@
  * Copyright (C) 2017 Miles Talmey.
  * Distributed under the MIT License (license terms are at http://opensource.org/licenses/MIT).
  */
-package com.emarte.regurgitator.extensions;
+package uk.emarte.regurgitator.extensions;
 
-import com.emarte.regurgitator.core.Log;
-import com.emarte.regurgitator.core.RegurgitatorException;
+import uk.emarte.regurgitator.core.Log;
+import uk.emarte.regurgitator.core.RegurgitatorException;
 import org.w3c.dom.Element;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.emarte.regurgitator.core.Log.getLog;
-import static com.emarte.regurgitator.core.XmlConfigUtil.getChildElements;
-import static com.emarte.regurgitator.core.XmlConfigUtil.loadOptionalStr;
-import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.*;
+import static uk.emarte.regurgitator.core.Log.getLog;
+import static uk.emarte.regurgitator.core.XmlConfigUtil.getChildElements;
+import static uk.emarte.regurgitator.core.XmlConfigUtil.loadOptionalStr;
+import static uk.emarte.regurgitator.extensions.ExtensionsConfigConstants.*;
 
 class XmlNamespaceLoader extends NamespaceLoader {
     private static final Log log = getLog(XmlNamespaceLoader.class);
