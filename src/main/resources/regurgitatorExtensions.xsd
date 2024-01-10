@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:rgc="http://common.regurgitator.emarte.com"
-           xmlns:rge="http://extensions.regurgitator.emarte.com"
-           targetNamespace="http://extensions.regurgitator.emarte.com" elementFormDefault="qualified">
+           xmlns:rgc="http://common.regurgitator.emarte.uk"
+           xmlns:rge="http://extensions.regurgitator.emarte.uk"
+           targetNamespace="http://extensions.regurgitator.emarte.uk" elementFormDefault="qualified">
 
-    <xs:import schemaLocation="regurgitatorCommon.xsd" namespace="http://common.regurgitator.emarte.com"/>
+    <xs:import schemaLocation="regurgitatorCommon.xsd" namespace="http://common.regurgitator.emarte.uk"/>
 
     <xs:complexType name="xml-parameter">
         <xs:sequence>
