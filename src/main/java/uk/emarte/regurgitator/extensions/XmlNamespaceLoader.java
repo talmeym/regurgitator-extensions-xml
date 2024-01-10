@@ -4,9 +4,9 @@
  */
 package uk.emarte.regurgitator.extensions;
 
+import org.w3c.dom.Element;
 import uk.emarte.regurgitator.core.Log;
 import uk.emarte.regurgitator.core.RegurgitatorException;
-import org.w3c.dom.Element;
 
 import java.util.HashMap;
 import java.util.List;
