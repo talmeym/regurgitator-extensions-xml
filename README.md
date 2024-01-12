@@ -36,15 +36,19 @@ a freemarker-builder aggregates parameter values together using a freemarker tem
 
 ```xml
 <rge:freemarker-builder source="template-param"/>
+```
 
+```xml
 <rge:freemarker-builder file="classpath:/template.ftl"/>
+```
 
+```xml
 <rge:freemarker-builder value="This is a ${descriptive} day!"/>
 ```
 
 a freemarker-builder can use the same value source attributes as other steps, such as ``create-parameter``, getting its template text from a source parameter, a file or an explicit value, specified as an attribute or element text (but not both).
 
-a freemarker-builder builds from just the ``parameters`` context by default. if the ``all-contexts`` attribute is true, all context data is made available to the builder, with dashes replaced by underscores in context names, and the colon separating context and parameter names replaced with a period, eg. ``request-metadata:method`` becomes ``request_metadata.method`` when referenced in the template.
+a freemarker-builder builds from just the ``parameters`` context by default. if the ``all-contexts`` attribute is true, all context data is made available to the builder, with dashes replaced by underscores in context names, and the colon separating context and parameter names replaced with a period, e.g. ``request-metadata:method`` becomes ``request_metadata.method`` when referenced in the template.
 
 ```xml
 <rge:freemarker-builder all-contexts="true">
@@ -56,7 +60,9 @@ a freemarker-builder builds from just the ``parameters`` context by default. if 
         </response>
     ]]>
 </rge:freemarker-builder>
+```
 
+```xml
 <rge:freemarker-builder all-contexts="true">
     {
         "payload": "${response_payload.text}",
@@ -64,42 +70,6 @@ a freemarker-builder builds from just the ``parameters`` context by default. if 
         "content-type": "${response_metadata.content_type}"
     }
 </rge:freemarker-builder>
-```
-
-### velocity-builder
-
-a velocity-builder aggregates parameter values together using a freemarker template.
-
-```xml
-<rge:velocity-builder source="template-param"/>
-
-<rge:velocity-builder file="classpath:/template.ftl"/>
-
-<rge:velocity-builder value="This is a ${descriptive} day!"/>
-```
-
-a velocity-builder can use the same value source attributes as other steps, such as ``create-parameter``, getting its template text from a source parameter, a file or an explicit value, specified as an attribute or element text (but not both).
-
-a velocity-builder builds from just the ``parameters`` context by default. if the ``all-contexts`` attribute is true, all context data is made available to the builder, with dashes replaced by underscores in context names, and the colon separating context and parameter names replaced with a period, eg. ``request-metadata:method`` becomes ``request_metadata.method`` when referenced in the template.
-
-```xml
-<rge:velocity-builder all-contexts="true">
-    <![CDATA[
-        <response>
-            <payload>${response_payload.text}</payload>
-            <status>${response_metadata.status_code}</status>
-            <content>${response_metadata.content_type}</content>
-        </response>
-    ]]>
-</rge:velocity-builder>
-
-<rge:velocity-builder all-contexts="true">
-    {
-        "payload": "${response_payload.text}",
-        "status-code": ${response_metadata.status_code},
-        "content-type": "${response_metadata.content_type}"
-    }
-</rge:velocity-builder>
 ```
 
 ### json-path-processor
@@ -143,25 +113,11 @@ a freemarker-processor processes a parameter value, formatting the value using a
 <rg:create-response source="unformatted-response">
     <rge:freemarker-processor file="classpath:/template.ftl"/>
 </rg:create-response>
-
-<rg:create-response source="unformatted-response">
-    <rge:freemarker-processor>The response was: ${value}</rge:freemarker-processor>
-</rg:create-response>
 ```
-
-the parameter value is made available to the template as simply ``value``. the template text can be specified in the element text or drawn in from a file.
-
-### velocity-processor
-
-a velocity-processor processes a parameter value, formatting the value using a velocity template.
 
 ```xml
 <rg:create-response source="unformatted-response">
-    <rge:velocity-processor file="classpath:/template.ftl"/>
-</rg:create-response>
-
-<rg:create-response source="unformatted-response">
-    <rge:velocity-processor>The response was: ${value}</rge:velocity-processor>
+    <rge:freemarker-processor>The response was: ${value}</rge:freemarker-processor>
 </rg:create-response>
 ```
 
