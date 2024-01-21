@@ -6,6 +6,8 @@ start your reading here: [regurgitator-all](https://talmeym.github.io/regurgitat
 
 read more about regurgitator in xml here: [regurgitator-core-xml](https://talmeym.github.io/regurgitator-core-xml#xml-configuration-of-regurgitator)
 
+[``apidocs``](https://regurgitator.emarte.uk/apidocs/regurgitator-extensions-xml/0.1.2/)
+
 ## extension steps in xml
 
 ### json-parameter
