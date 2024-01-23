@@ -15,12 +15,12 @@ import static uk.emarte.regurgitator.core.CoreConfigConstants.FILE;
 import static uk.emarte.regurgitator.core.Log.getLog;
 import static uk.emarte.regurgitator.core.XmlConfigUtil.loadMandatoryStr;
 
-public class XmlSchemaValidatorXmlLoader implements XmlLoader<XmlSchemaValidator> {
-    private static final Log log = getLog(XmlSchemaValidatorXmlLoader.class);
+public class JsonSchemaValidatorXmlLoader implements XmlLoader<JsonSchemaValidator> {
+    private static final Log log = getLog(JsonSchemaValidatorXmlLoader.class);
 
     @Override
-    public XmlSchemaValidator load(Element element, Set<Object> allIds) throws RegurgitatorException {
-        log.debug("Loaded xml schema validator");
-        return new XmlSchemaValidator(loadMandatoryStr(element, FILE));
+    public JsonSchemaValidator load(Element element, Set<Object> allIds) throws RegurgitatorException {
+        log.debug("Loaded json schema validator");
+        return new JsonSchemaValidator(loadMandatoryStr(element, FILE));
     }
 }

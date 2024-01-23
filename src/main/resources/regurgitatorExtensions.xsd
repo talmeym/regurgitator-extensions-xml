@@ -87,6 +87,10 @@
         <xs:attribute name="file" type="rgc:populated-string"/>
     </xs:complexType>
 
+    <xs:complexType name="json-schema-validator">
+        <xs:attribute name="file" type="rgc:populated-string"/>
+    </xs:complexType>
+
     <xs:complexType name="contains-json-path">
         <xs:simpleContent>
             <xs:extension base="rgc:populated-string"/>
@@ -104,6 +108,7 @@
     <xs:element name="freemarker-builder" type="rge:freemarker-builder"/>
     <xs:element name="freemarker-processor" type="rge:freemarker-processor"/>
     <xs:element name="xml-schema-validator" type="rge:xml-schema-validator"/>
+    <xs:element name="json-schema-validator" type="rge:json-schema-validator"/>
     <xs:element name="json-parameter" type="rge:json-parameter"/>
     <xs:element name="xml-parameter" type="rge:xml-parameter"/>
     <xs:element name="json-path-processor" type="rge:json-path-processor"/>
