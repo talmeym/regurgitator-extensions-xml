@@ -125,9 +125,21 @@ a freemarker-processor processes a parameter value, formatting the value using a
 
 the parameter value is made available to the template as simply ``value``. the template text can be specified in the element text or drawn in from a file.
 
+### json-schema-validator
+
+a json-schema-validator is a ``value-processor`` that validates a parameter value against a json schema file.
+
+```xml
+<rg:create-response source="response">
+    <rge:json-schema-validator file="classpath:/response_schema.json"/>
+</rg:create-response>
+```
+
+validating a parameter value can be useful in ensuring that your configured logic and processing always returns valid responses. if the value fails validation, an exception is thrown; if it passes, the value is passed through unchanged.
+
 ### xml-schema-validator
 
-an xml-schema-validator is a ``value-processor`` that validates a parameter value against an xml-schema file.
+an xml-schema-validator is a ``value-processor`` that validates a parameter value against an xml schema file.
 
 ```xml
 <rg:create-response source="response">
