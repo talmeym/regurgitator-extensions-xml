@@ -192,3 +192,39 @@ a contains-xpath is a ``condition-behaviour`` that checks whether a parameter's 
 ```
 
 the examples above shows 3 ways in which the contains-xpath ``condition-behaviour`` can be used: in the short form of ``"behaviour-name" : "value"``; with separate ``value`` and ``behaviour`` attributes; or with a child element. When using a child element, you can specify namespaces for the xpath expression using a ``namespaces`` attribute.
+
+### meets-json-schema
+
+a meets-json-schema is a ``condition-behaviour`` that checks whether a parameters' content passes validation against a json schema.
+
+```xml
+...
+    <rg:condition source="parameters:json" meets-json-schema="classpath:/schema.json"/>
+...
+```
+
+```xml
+...
+    <rg:condition source="parameters:json" value="classpath:/schema.json" behaviour="meets-json-schema"/>
+...
+```
+
+the examples above show both ways in which the meets-json-schema ``condition-behaviour`` can be used, either in the short form of ``"behaviour-name" : "value"`` or with separate ``value`` and ``behaviour`` attributes.
+
+### meets-xml-schema
+
+a meets-xml-schema is a ``condition-behaviour`` that checks whether a parameters' content passes validation against an xml schema.
+
+```xml
+...
+    <rg:condition source="parameters:xml" meets-xml-schema="classpath:/schema.xsd"/>
+...
+```
+
+```xml
+...
+    <rg:condition source="parameters:xml" value="classpath:/schema.xsd" behaviour="meets-xml-schema"/>
+...
+```
+
+the examples above show both ways in which the meets-xml-schema ``condition-behaviour`` can be used, either in the short form of ``"behaviour-name" : "value"`` or with separate ``value`` and ``behaviour`` attributes.
