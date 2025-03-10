@@ -6,8 +6,6 @@ start your reading here: [regurgitator-all](https://talmeym.github.io/regurgitat
 
 read more about regurgitator in xml here: [regurgitator-core-xml](https://talmeym.github.io/regurgitator-core-xml#xml-configuration-of-regurgitator)
 
-[``apidocs``](https://regurgitator.emarte.uk/apidocs/regurgitator-extensions-xml/0.1.3/)
-
 ## extension steps in xml
 
 ### json-parameter
@@ -228,3 +226,5 @@ a meets-xml-schema is a ``condition-behaviour`` that checks whether a parameters
 ```
 
 the examples above show both ways in which the meets-xml-schema ``condition-behaviour`` can be used, either in the short form of ``"behaviour-name" : "value"`` or with separate ``value`` and ``behaviour`` attributes.
+
+[``apidocs``](https://regurgitator.emarte.uk/apidocs/regurgitator-extensions-xml/0.1.4/){:target="_blank"}
