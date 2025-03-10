@@ -227,4 +227,6 @@ a meets-xml-schema is a ``condition-behaviour`` that checks whether a parameters
 
 the examples above show both ways in which the meets-xml-schema ``condition-behaviour`` can be used, either in the short form of ``"behaviour-name" : "value"`` or with separate ``value`` and ``behaviour`` attributes.
 
-[``apidocs``](https://regurgitator.emarte.uk/apidocs/regurgitator-extensions-xml/0.1.4/){:target="_blank"}
+---
+
+apidocs: [``0.1.4``](https://regurgitator.emarte.uk/apidocs/regurgitator-extensions-xml/0.1.4/){:target="_blank"} [``0.1.3``](https://regurgitator.emarte.uk/apidocs/regurgitator-extensions-xml/0.1.3/){:target="_blank"}
